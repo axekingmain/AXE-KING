@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is the personal website of AXEKING.">
+    <meta name="keywords" content="AXEKING, personal website, information security, dark psychology">
+    <meta name="author" content="AXEKING">
+    <meta property="og:title" content="AXEKING">
+    <meta property="og:description" content="This is the personal website of AXEKING.">
+    <meta property="og:image" content="your-photo.jpg">
+    <meta property="og:url" content="http://example.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AXEKING">
+    <meta name="twitter:description" content="This is the personal website of AXEKING.">
+    <meta name="twitter:image" content="your-photo.jpg">
+    <title>AXE KING</title>
+    <!-- Link to the stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            -webkit-user-select: none; /* Disable text selection in webkit browsers */
+            -moz-user-select: none; /* Disable text selection in Firefox */
+            -ms-user-select: none; /* Disable text selection in IE10+ */
+            user-select: none; /* Disable text selection in modern browsers */
+        }
+        .no-select {
+            user-select: none; /* Disable text selection for specific elements */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Profile picture with pulsing neon effect -->
+        <img src="your-photo.jpg" alt="AXEKING" class="profile-pic">
+        <h1 class="no-select">AXE KING</h1>
+        <p class="no-select">Information security is not just a task, it’s a way of life.</p>
+
+        <!-- Information block with image on the left and text on the right -->
+        <div class="info-block">
+            <img src="security-image.jpg" alt="Information Security" class="info-image">
+            <div class="info-text">
+                <h2 class="no-select">Information Security</h2>
+                <p class="no-select">Information security is crucial in the digital age. Protecting data from unauthorized access and ensuring its integrity are key aspects. Understanding potential threats and implementing strong security measures is essential for safeguarding sensitive information.</p>
+            </div>
+        </div>
+
+        <!-- Information block with text on the left and image on the right -->
+        <div class="info-block reverse">
+            <img src="dark-psychology-image.jpg" alt="Dark Psychology" class="info-image">
+            <div class="info-text">
+                <h2 class="no-select">Dark Psychology</h2>
+                <p class="no-select">Dark psychology involves the study of the human mind and behaviors that exploit vulnerabilities. Understanding these techniques can help in recognizing manipulation tactics and defending against psychological attacks. Awareness and education are critical for maintaining mental and emotional well-being.</p>
+            </div>
+        </div>
+
+        <!-- Contact links with icons -->
+        <div class="links">
+            <a href="https://t.me/AXE_KINGmain" target="_blank">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); // Prevent right-click
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'PrintScreen') {
+                e.preventDefault(); // Prevent PrintScreen
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+/* Basic styling for the body */
+body {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text color */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font */
+    text-align: center; /* Center-align text */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Vertical layout */
+    justify-content: center; /* Center items vertically */
+}
+
+/* Container styling */
+.container {
+    position: relative; /* Relative positioning for child elements */
+    display: inline-block; /* Inline block to center */
+    max-width: 100%; /* Full width */
+    padding: 20px; /* Padding around content */
+    box-sizing: border-box; /* Include padding in width/height */
+    margin: 0 auto; /* Center container */
+}
+
+/* Profile picture styling with neon pulse effect */
+.profile-pic {
+    border-radius: 50%; /* Circular image */
+    width: 150px; /* Fixed width */
+    height: 150px; /* Fixed height */
+    box-shadow: 0 0 15px 5px rgba(148, 0, 211, 0.75); /* Neon effect */
+    animation: pulse 1.5s infinite, scale 0.25s ease-in-out; /* Pulsing and scaling animation */
+    margin: 0 auto; /* Center image */
+}
+
+/* Keyframes for pulsing animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 15px 5px rgba(148, 0, 211, 0.75);
+    }
+    50% {
+        box-shadow: 0 0 25px 10px rgba(148, 0, 211, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 15px 5px rgba(148, 0, 211, 0.75);
+    }
+}
+
+/* Keyframes for scaling animation */
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* Text glow effect */
+h1, p {
+    animation: glow 1.5s ease-in-out infinite; /* Glow animation */
+}
+
+/* Keyframes for text glow effect */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* Styling for headings */
+h1 {
+    margin: 10px 0 5px; /* Margin around heading */
+    font-size: 24px; /* Font size */
+}
+
+/* Styling for paragraphs */
+p {
+    margin: 0; /* Remove default margin */
+    font-size: 16px; /* Font size */
+    color: #fff; /* White text color */
+}
+
+/* Links styling */
+.links {
+    margin-top: 20px; /* Top margin */
+    font-size: 18px; /* Font size */
+}
+
+/* Styling for each link */
+.links a {
+    color: #8a2be2; /* Link color */
+    text-decoration: none; /* Remove underline */
+    margin: 0 10px; /* Margin between links */
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Center items vertically */
+    font-size: 18px; /* Font size */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Styling for icons within links */
+.links a i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+/* Hover effect for links */
+.links a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #fff; /* Change link color on hover */
+}
+
+/* Styling for info blocks */
+.info-block {
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin: 20px 0; /* Margin around blocks */
+    flex-wrap: wrap; /* Wrap content */
+    gap: 20px; /* Space between items */
+}
+
+/* Styling for info images */
+.info-image {
+    border-radius: 10px; /* Rounded corners */
+    width: 300px; /* Fixed width */
+    height: auto; /* Auto height to maintain aspect ratio */
+    margin: 0 20px; /* Margin around image */
+    transition: transform 0.25s ease; /* Smooth scaling transition */
+}
+
+/* Hover effect for info images */
+.info-image:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+/* Styling for info text */
+.info-text {
+    max-width: 500px; /* Max width of text block */
+    text-align: left; /* Align text to the left */
+}
+
+/* Reverse the order of items in the info block */
+.reverse {
+    flex-direction: row-reverse; /* Reverse layout */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .info-block {
+        flex-direction: column; /* Column layout for small screens */
+    }
+
+    .info-image {
+        margin-bottom: 20px; /* Margin below image */
+        width: 100%; /* Full width for images */
+    }
+}
