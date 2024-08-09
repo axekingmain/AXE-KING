@@ -26,65 +26,66 @@
 <div id="desktopMessage" class="desktop-message">
         <h1>Доступ с компьютеров запрещен</h1>
 </div>
+<div id="content">
+    <div class="menu-icon" id="menuIcon" onclick="openSidebar()">
+            <div></div>
+            <div></div>
+            <div></div>
+    </div>
 
-<div class="menu-icon" id="menuIcon" onclick="openSidebar()">
-        <div></div>
-        <div></div>
-        <div></div>
+        <button class="close-icon" id="closeIcon" onclick="closeSidebar()">&#10006;</button>
+
+        <div class="sidebar" id="sidebar">
+            <h2>Menu</h2>
+            <ul class="menu-buttons">
+                <li><button onclick="showCustomAlert('Сказали же в разработке!')">В разработке ♥</button></li>
+            </ul>
+        </div>
+
+        <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+        <div class="container">
+            <!-- Profile picture with pulsing neon effect -->
+            <img src="./your-photo.jpg" alt="AXEKING" class="profile-pic">
+            <h1 class="no-select">AXE KING</h1>
+            <p class="no-select">Information security is not just a task, it’s a way of life.</p>
+
+            <!-- Information block with image on the left and text on the right -->
+            <div class="info-block">
+                <img src="./security-image.jpg" alt="Information Security" class="info-image">
+                <div class="info-text">
+                    <h2 class="no-select">Information Security</h2>
+                    <p class="no-select">Information security is crucial in the digital age. Protecting data from unauthorized access and ensuring its integrity are key aspects. Understanding potential threats and implementing strong security measures is essential for safeguarding sensitive information.</p>
+                </div>
+            </div>
+
+            <!-- Information block with text on the left and image on the right -->
+            <div class="info-block reverse">
+                <img src="./dark-psychology-image.jpg" alt="Dark Psychology" class="info-image">
+                <div class="info-text">
+                    <h2 class="no-select">Dark Psychology</h2>
+                    <p class="no-select">Dark psychology involves the study of the human mind and behaviors that exploit vulnerabilities. Understanding these techniques can help in recognizing manipulation tactics and defending against psychological attacks. Awareness and education are critical for maintaining mental and emotional well-being.</p>
+                </div>
+            </div>
+
+            <!-- Contact links with icons -->
+            <div class="links">
+                <a href="https://t.me/AXE_KINGmain" target="_blank">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+            </div>
+            <div class="visitor-counter">
+                Number of Visits: <span id="visitCount">0</span>
+            </div>
+        </div>
+         <!-- Custom Alert Modal -->
+        <div id="customAlert" class="custom-alert">
+            <div class="alert-content">
+                <p id="alertMessage">Message</p>
+                <button onclick="closeCustomAlert()">OK</button>
+            </div>
+        </div>
 </div>
-
-    <button class="close-icon" id="closeIcon" onclick="closeSidebar()">&#10006;</button>
-
-    <div class="sidebar" id="sidebar">
-        <h2>Menu</h2>
-        <ul class="menu-buttons">
-            <li><button onclick="showCustomAlert('Сказали же в разработке!')">В разработке ♥</button></li>
-        </ul>
-    </div>
-
-    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
-
-    <div class="container">
-        <!-- Profile picture with pulsing neon effect -->
-        <img src="./your-photo.jpg" alt="AXEKING" class="profile-pic">
-        <h1 class="no-select">AXE KING</h1>
-        <p class="no-select">Information security is not just a task, it’s a way of life.</p>
-
-        <!-- Information block with image on the left and text on the right -->
-        <div class="info-block">
-            <img src="./security-image.jpg" alt="Information Security" class="info-image">
-            <div class="info-text">
-                <h2 class="no-select">Information Security</h2>
-                <p class="no-select">Information security is crucial in the digital age. Protecting data from unauthorized access and ensuring its integrity are key aspects. Understanding potential threats and implementing strong security measures is essential for safeguarding sensitive information.</p>
-            </div>
-        </div>
-
-        <!-- Information block with text on the left and image on the right -->
-        <div class="info-block reverse">
-            <img src="./dark-psychology-image.jpg" alt="Dark Psychology" class="info-image">
-            <div class="info-text">
-                <h2 class="no-select">Dark Psychology</h2>
-                <p class="no-select">Dark psychology involves the study of the human mind and behaviors that exploit vulnerabilities. Understanding these techniques can help in recognizing manipulation tactics and defending against psychological attacks. Awareness and education are critical for maintaining mental and emotional well-being.</p>
-            </div>
-        </div>
-
-        <!-- Contact links with icons -->
-        <div class="links">
-            <a href="https://t.me/AXE_KINGmain" target="_blank">
-                <i class="fab fa-telegram"></i> Telegram
-            </a>
-        </div>
-        <div class="visitor-counter">
-            Number of Visits: <span id="visitCount">0</span>
-        </div>
-    </div>
-     <!-- Custom Alert Modal -->
-    <div id="customAlert" class="custom-alert">
-        <div class="alert-content">
-            <p id="alertMessage">Message</p>
-            <button onclick="closeCustomAlert()">OK</button>
-        </div>
-    </div>
     <script src="./script.js"></script>
 </body>
 </html>
