@@ -13,6 +13,14 @@ body {
     justify-content: center; /* Center items vertically */
 }
 
+/* Prevent text and image selection */
+body {
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+    user-select: none;         /* Non-prefixed version */
+}
+
 /* Container styling */
 .container {
     position: relative; /* Relative positioning for child elements */
@@ -91,6 +99,8 @@ p {
 .links {
     margin-top: 20px; /* Top margin */
     font-size: 18px; /* Font size */
+    text-align: left; /* Align text to the left */
+    width: 100%; /* Ensure the links container spans the full width */
 }
 
 /* Styling for each link */
@@ -98,8 +108,9 @@ p {
     color: #8a2be2; /* Link color */
     text-decoration: none; /* Remove underline */
     margin: 0 10px; /* Margin between links */
-    display: flex; /* Flexbox layout */
+    display: inline-flex; /* Inline-flex layout */
     align-items: center; /* Center items vertically */
+    justify-content: flex-start; /* Align content to the start */
     font-size: 18px; /* Font size */
     transition: color 0.3s ease; /* Smooth color transition */
 }
@@ -160,4 +171,160 @@ p {
         margin-bottom: 20px; /* Margin below image */
         width: 100%; /* Full width for images */
     }
+}
+
+/* Sidebar button styling */
+.menu-icon, .close-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-icon div {
+    width: 100%;
+    height: 4px;
+    background: white;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.menu-icon div:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+
+.close-icon {
+    display: none;
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    outline: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Fully hide the sidebar */
+    width: 50%;
+    height: 100%;
+    background-color: #111;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Adjust content to start from the top */
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 998;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Styling for menu buttons */
+.sidebar .menu-buttons {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .menu-buttons li {
+    margin-bottom: 15px; /* Space between buttons */
+}
+
+.sidebar .menu-buttons button {
+    font-size: 16px;
+    color: #8a2be2;
+    text-align: center;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%; /* Full width of the sidebar */
+    display: block; /* Make button a block element */
+}
+
+.sidebar .menu-buttons button:hover {
+    background-color: rgba(138, 43, 226, 0.3);
+    color: #fff;
+}
+
+.visitor-counter {
+    font-size: 14px;
+    color: #8a2be2;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Space above the counter */
+}
+
+
+
+.custom-alert {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.alert-content {
+    background-color: rgba(138, 43, 226, 0.7);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.alert-content button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.alert-content button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
 }

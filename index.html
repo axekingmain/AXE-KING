@@ -20,19 +20,25 @@
     <link rel="stylesheet" href="./style.css">
     <!-- Link to Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            -webkit-user-select: none; /* Disable text selection in webkit browsers */
-            -moz-user-select: none; /* Disable text selection in Firefox */
-            -ms-user-select: none; /* Disable text selection in IE10+ */
-            user-select: none; /* Disable text selection in modern browsers */
-        }
-        .no-select {
-            user-select: none; /* Disable text selection for specific elements */
-        }
-    </style>
 </head>
 <body>
+<div class="menu-icon" id="menuIcon" onclick="openSidebar()">
+        <div></div>
+        <div></div>
+        <div></div>
+</div>
+
+    <button class="close-icon" id="closeIcon" onclick="closeSidebar()">&#10006;</button>
+
+    <div class="sidebar" id="sidebar">
+        <h2>Menu</h2>
+        <ul class="menu-buttons">
+            <li><button onclick="showCustomAlert('Сказали же в разработке!')">В разработке ♥</button></li>
+        </ul>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
     <div class="container">
         <!-- Profile picture with pulsing neon effect -->
         <img src="./your-photo.jpg" alt="AXEKING" class="profile-pic">
@@ -63,29 +69,17 @@
                 <i class="fab fa-telegram"></i> Telegram
             </a>
         </div>
+        <div class="visitor-counter">
+            Number of Visits: <span id="visitCount">0</span>
+        </div>
     </div>
-
-    <script>
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault(); // Prevent right-click
-        });
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'PrintScreen') {
-                e.preventDefault(); // Prevent PrintScreen
-            }
-        });
-
-        // Prevent zooming with keyboard and mouse
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && (e.key === '+' || e.key === '-' || e.key === '0')) {
-                e.preventDefault(); // Prevent zoom in, zoom out, reset zoom
-            }
-        });
-        document.addEventListener('wheel', function(e) {
-            if (e.ctrlKey) {
-                e.preventDefault(); // Prevent zoom with mouse wheel
-            }
-        });
-    </script>
+     <!-- Custom Alert Modal -->
+    <div id="customAlert" class="custom-alert">
+        <div class="alert-content">
+            <p id="alertMessage">Message</p>
+            <button onclick="closeCustomAlert()">OK</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
 </body>
 </html>
