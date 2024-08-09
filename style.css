@@ -328,3 +328,48 @@ p {
 .alert-content button:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+
+.desktop-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Полностью черный фон */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    text-align: center;
+}
+
+.desktop-message h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+#content {
+    display: block;
+    pointer-events: auto; /* Включаем взаимодействие с элементами */
+}
+
+@media (min-width: 768px) {
+    .desktop-message {
+        display: flex;
+    }
+    #content {
+        display: none;
+        pointer-events: none; /* Блокируем взаимодействие с элементами */
+    }
+}
+
+
+/* Скрытие кнопок на компьютерах */
+@media (min-width: 768px) {
+    .menu-icon, .close-icon {
+        display: none;
+    }
+}

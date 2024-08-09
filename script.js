@@ -2,23 +2,38 @@ let lastScrollTop = 0; // Track last scroll position
 const menuIcon = document.getElementById('menuIcon');
 
 
-const isDesktop = /Win|Mac|Linux/.test(navigator.platform);
+document.addEventListener('DOMContentLoaded', function () {
+    const isDesktop = /Win|Mac|Linux/.test(navigator.platform);
 
-if (isDesktop) {
-    // Создаем элемент для загрузки HTML содержимого
-    const contentDiv = document.createElement('div');
-    contentDiv.innerHTML = '<h1>Доступ с компьютеров запрещен</h1>';
-    document.body.innerHTML = '';
-    document.body.appendChild(contentDiv);
-    document.body.style.backgroundColor = '#000';
-    document.body.style.color = '#fff';
+    if (isDesktop) {
+        document.getElementById('desktopMessage').style.display = 'flex';
+        document.getElementById('content').style.display = 'none';
+        // Скрываем кнопки меню и X
+        document.getElementById('menuIcon').style.display = 'none';
+        document.getElementById('closeIcon').style.display = 'none';
+    } else {
+        document.getElementById('desktopMessage').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+        // Убедимся, что кнопки меню и X видимы
+        document.getElementById('menuIcon').style.display = 'block';
+        document.getElementById('closeIcon').style.display = 'block';
+    }
+});
+
+function showCustomAlert(message) {
+    document.getElementById('alertMessage').textContent = message;
+    document.getElementById('customAlert').style.display = 'flex';
 }
 
+function closeCustomAlert() {
+    document.getElementById('customAlert').style.display = 'none';
+}
 
+// Sidebar related functions
 function openSidebar() {
     document.getElementById('sidebar').classList.add('open');
     document.getElementById('overlay').classList.add('active');
-    menuIcon.style.display = 'none';
+    document.getElementById('menuIcon').style.display = 'none';
     document.getElementById('closeIcon').style.display = 'block';
     document.body.style.overflow = 'hidden'; // Block scroll when menu is open
 }
@@ -26,10 +41,25 @@ function openSidebar() {
 function closeSidebar() {
     document.getElementById('sidebar').classList.remove('open');
     document.getElementById('overlay').classList.remove('active');
-    menuIcon.style.display = 'flex';
+    document.getElementById('menuIcon').style.display = 'flex';
     document.getElementById('closeIcon').style.display = 'none';
     document.body.style.overflow = ''; // Unblock scroll when menu is closed
 }
+// function openSidebar() {
+//     document.getElementById('sidebar').classList.add('open');
+//     document.getElementById('overlay').classList.add('active');
+//     menuIcon.style.display = 'none';
+//     document.getElementById('closeIcon').style.display = 'block';
+//     document.body.style.overflow = 'hidden'; // Block scroll when menu is open
+// }
+//
+// function closeSidebar() {
+//     document.getElementById('sidebar').classList.remove('open');
+//     document.getElementById('overlay').classList.remove('active');
+//     menuIcon.style.display = 'flex';
+//     document.getElementById('closeIcon').style.display = 'none';
+//     document.body.style.overflow = ''; // Unblock scroll when menu is closed
+// }
 
 function updateVisitCount() {
     let count = localStorage.getItem('visitCount') || 0;
@@ -41,14 +71,14 @@ function updateVisitCount() {
 // Initialize visit count on page load
 window.onload = updateVisitCount;
 
-function showCustomAlert(message) {
-    document.getElementById('alertMessage').textContent = message;
-    document.getElementById('customAlert').style.display = 'flex';
-}
-
-function closeCustomAlert() {
-    document.getElementById('customAlert').style.display = 'none';
-}
+// function showCustomAlert(message) {
+//     document.getElementById('alertMessage').textContent = message;
+//     document.getElementById('customAlert').style.display = 'flex';
+// }
+//
+// function closeCustomAlert() {
+//     document.getElementById('customAlert').style.display = 'none';
+// }
 
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault(); // Prevent right-click
