@@ -22,15 +22,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<audio id="backgroundMusic" loop autoplay>
+<audio id="backgroundMusic" loop>
         <source src="./music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-
-<!--<div id="desktopMessage" class="desktop-message">-->
-<!--        <h1>Доступ с компьютеров запрещен</h1>-->
-<!--</div>-->
-<div id="content">
     <div class="menu-icon" id="menuIcon" onclick="openSidebar()">
             <div></div>
             <div></div>
@@ -42,8 +37,8 @@
         <div class="sidebar" id="sidebar">
             <h2>Menu</h2>
             <ul class="menu-buttons">
-                <li><a href="about_me.html"><button>About Me</button></a></button></li>
-                <li><a href="about_life.html"><button>About Life</button></a></button></li>
+                <li><a href="./index.html"><button>AXE KING</button></a></button></li>
+                <li><a href="./about_me.html"><button>About Me</button></a></button></li>
 <!--                <li><button onclick="showCustomAlert('Сказали же в разработке!')">В разработке ♥</button></li>-->
             </ul>
         </div>
@@ -54,23 +49,23 @@
             <!-- Profile picture with pulsing neon effect -->
             <img src="./your-photo.jpg" alt="AXEKING" class="profile-pic">
             <h1 class="no-select">AXE KING</h1>
-            <p class="no-select">Information security is not just a task, it’s a way of life.</p>
+            <p class="no-select">Life is not about the number of breaths we take, but about the moments that take our breath away.</p>
 
             <!-- Information block with image on the left and text on the right -->
             <div class="info-block">
-                <img src="./security-image.jpg" alt="Information Security" class="info-image">
+                <img src="./life.jpg" alt="Information Security" class="info-image">
                 <div class="info-text">
-                    <h2 class="no-select">Information Security</h2>
-                    <p class="no-select">Information security is crucial in the digital age. Protecting data from unauthorized access and ensuring its integrity are key aspects. Understanding potential threats and implementing strong security measures is essential for safeguarding sensitive information.</p>
+                    <h2 class="no-select">Programming</h2>
+                    <p class="no-select">I take orders from Upwork, My minimum order will be 50$-60$, By and large I take Websites, Bots, Programs, Scripts, I know Backend, Frontend is almost Full Stack</p>
                 </div>
             </div>
 
             <!-- Information block with text on the left and image on the right -->
             <div class="info-block reverse">
-                <img src="./dark-psychology-image.jpg" alt="Dark Psychology" class="info-image">
+                <img src="./Logistics.jpg" alt="Dark Psychology" class="info-image">
                 <div class="info-text">
-                    <h2 class="no-select">Dark Psychology</h2>
-                    <p class="no-select">Dark psychology involves the study of the human mind and behaviors that exploit vulnerabilities. Understanding these techniques can help in recognizing manipulation tactics and defending against psychological attacks. Awareness and education are critical for maintaining mental and emotional well-being.</p>
+                    <h2 class="no-select">Logistics</h2>
+                    <p class="no-select">In short, in logistics, I make them a book where they record their day, Each driver can work 11 hours in one shift, there are some idiots, 11 hours is not enough, I add a few hours for them or open a new shift, things like that</p>
                 </div>
             </div>
 
@@ -80,18 +75,7 @@
                     <i class="fab fa-telegram"></i> Telegram
                 </a>
             </div>
-            <div class="visitor-counter">
-                Number of Visits: <span id="visitCount">0</span>
-            </div>
         </div>
-         <!-- Custom Alert Modal -->
-        <div id="customAlert" class="custom-alert">
-            <div class="alert-content">
-                <p id="alertMessage">Message</p>
-                <button onclick="closeCustomAlert()">OK</button>
-            </div>
-        </div>
-</div>
     <script src="./script.js"></script>
 </body>
 </html>

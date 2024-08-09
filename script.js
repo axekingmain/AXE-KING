@@ -2,6 +2,7 @@ let lastScrollTop = 0; // Track last scroll position
 const menuIcon = document.getElementById('menuIcon');
 
 
+
 // document.addEventListener('DOMContentLoaded', function () {
 //     const isDesktop = /Win|Mac|Linux/.test(navigator.platform);
 //
@@ -28,6 +29,7 @@ function showCustomAlert(message) {
 
 function closeCustomAlert() {
     document.getElementById('customAlert').style.display = 'none';
+    playMusic();
 }
 
 // Sidebar related functions
@@ -106,4 +108,123 @@ window.addEventListener('scroll', function() {
     }
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+});
+
+
+// function playMusic() {
+//     const audio = document.getElementById('backgroundMusic');
+//     if (audio) {
+//         audio.play().catch(error => {
+//             console.error('Error playing audio:', error);
+//         });
+//     } else {
+//         console.error('Audio element not found.');
+//     }
+// }
+//
+// // Воспроизвести аудио при первом взаимодействии пользователя с документом
+// document.addEventListener('click', playMusic, { once: true });
+//
+
+
+// music.js
+// script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('backgroundMusic');
+
+    if (!audio) {
+        console.error('Audio element not found');
+        return;
+    }
+
+    // Попытаться воспроизвести аудио
+    function playMusic() {
+        audio.play().catch(error => {
+            console.error('Error playing audio:', error);
+        });
+    }
+
+    // Попытаться воспроизвести музыку при загрузке страницы
+    playMusic();
+
+    // Слушаем событие нажатия для возобновления воспроизведения, если оно было заблокировано
+    document.body.addEventListener('click', () => {
+        playMusic();
+    });
+
+    // Сохраняем текущее время воспроизведения при уходе со страницы
+    window.addEventListener('beforeunload', () => {
+        localStorage.setItem('musicTime', audio.currentTime);
+    });
+
+    // Восстанавливаем время воспроизведения при загрузке страницы
+    const lastTime = localStorage.getItem('musicTime');
+    if (lastTime) {
+        audio.currentTime = parseFloat(lastTime);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('backgroundMusic');
+
+    if (!audio) {
+        console.error('Audio element not found');
+        return;
+    }
+
+    // Функция для воспроизведения музыки
+    function playMusic() {
+        audio.play().catch(error => {
+            console.error('Error playing audio:', error);
+        });
+    }
+
+    // Попытаться воспроизвести музыку при загрузке страницы
+    // Сохраняем текущее время воспроизведения при уходе со страницы
+    window.addEventListener('beforeunload', () => {
+        localStorage.setItem('musicTime', audio.currentTime);
+    });
+
+    // Восстанавливаем время воспроизведения при загрузке страницы
+    const lastTime = localStorage.getItem('musicTime');
+    if (lastTime) {
+        audio.currentTime = parseFloat(lastTime);
+    }
+
+    // Показать предупреждение и предложить воспроизвести музыку
+    document.body.addEventListener('click', () => {
+        // Воспроизводим музыку только один раз после клика
+        document.body.removeEventListener('click', arguments.callee);
+        playMusic();
+    });
+
+    // Показываем предупреждение сразу при загрузке страницы
+    showCustomAlert('Проверка На Робота<br>Нажмите Ок');
+
+    function showCustomAlert(message) {
+    const alertElement = document.getElementById('customAlert');
+    const alertMessage = document.getElementById('alertMessage');
+
+    if (!alertElement || !alertMessage) {
+        console.error('Alert elements not found');
+        return;
+    }
+
+    // Установка текста сообщения с HTML разрывами строк
+    alertMessage.innerHTML = message;
+    alertElement.style.display = 'flex';
+
+    // При нажатии на кнопку "OK" в предупреждении запускаем музыку
+    document.querySelector('.alert-content button').addEventListener('click', () => {
+        alertElement.style.display = 'none';
+        // Вызов функции воспроизведения музыки
+        const audio = document.getElementById('background-music');
+        if (audio) {
+            audio.play().catch(error => {
+                console.error('Error playing audio:', error);
+            });
+        }
+    });
+}
 });
