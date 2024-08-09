@@ -2,25 +2,25 @@ let lastScrollTop = 0; // Track last scroll position
 const menuIcon = document.getElementById('menuIcon');
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const isDesktop = /Win|Mac|Linux/.test(navigator.platform);
-
-    if (isDesktop) {
-        // Для компьютеров: показываем сообщение и скрываем основной контент
-        document.getElementById('desktopMessage').style.display = 'flex';
-        document.getElementById('content').style.display = 'none';
-        // Скрываем кнопки меню и X
-        document.getElementById('menuIcon').style.display = 'none';
-        document.getElementById('closeIcon').style.display = 'none';
-    } else {
-        // Для мобильных устройств: скрываем сообщение и показываем основной контент
-        document.getElementById('desktopMessage').style.display = 'none';
-        document.getElementById('content').style.display = 'block';
-        // Убедимся, что кнопки меню и X видимы
-        document.getElementById('menuIcon').style.display = 'block';
-        document.getElementById('closeIcon').style.display = 'block';
-    }
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     const isDesktop = /Win|Mac|Linux/.test(navigator.platform);
+//
+//     if (isDesktop) {
+//         // Для компьютеров: показываем сообщение и скрываем основной контент
+//         document.getElementById('desktopMessage').style.display = 'flex';
+//         document.getElementById('content').style.display = 'none';
+//         // Скрываем кнопки меню и X
+//         document.getElementById('menuIcon').style.display = 'none';
+//         document.getElementById('closeIcon').style.display = 'none';
+//     } else {
+//         // Для мобильных устройств: скрываем сообщение и показываем основной контент
+//         document.getElementById('desktopMessage').style.display = 'none';
+//         document.getElementById('content').style.display = 'block';
+//         // Убедимся, что кнопки меню и X видимы
+//         document.getElementById('menuIcon').style.display = 'block';
+//         document.getElementById('closeIcon').style.display = 'block';
+//     }
+// });
 function showCustomAlert(message) {
     document.getElementById('alertMessage').textContent = message;
     document.getElementById('customAlert').style.display = 'flex';

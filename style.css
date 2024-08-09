@@ -329,27 +329,27 @@ p {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Стиль для сообщения на компьютерах */
-.desktop-message {
-    display: none; /* По умолчанию скрыто */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000; /* Полностью черный фон */
-    color: #fff;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    text-align: center;
-    font-size: 24px;
-}
+/*!* Стиль для сообщения на компьютерах *!*/
+/*.desktop-message {*/
+/*    display: none; !* По умолчанию скрыто *!*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    background-color: #000; !* Полностью черный фон *!*/
+/*    color: #fff;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    z-index: 1000;*/
+/*    text-align: center;*/
+/*    font-size: 24px;*/
+/*}*/
 
-/* Контент основной страницы */
-#content {
-    display: block; /* По умолчанию отображается */
-}
+/*!* Контент основной страницы *!*/
+/*#content {*/
+/*    display: block; !* По умолчанию отображается *!*/
+/*}*/
 
 /*!* Скрытие контента на компьютерах *!*/
 /*@media (min-width: 768px) {*/
@@ -360,11 +360,8 @@ p {
 /*    .desktop-message {*/
 /*        display: flex; !* Показывать сообщение на компьютерах *!*/
 /*    }*/
-/*}*/
 
-/* Скрытие кнопок на компьютерах */
-@media (min-width: 768px) {
-    .menu-icon, .close-icon {
-        display: none;
-    }
-}
+/*    .menu-icon, .close-icon {*/
+/*        display: none;*/
+/*    }*/
+/*}*/
