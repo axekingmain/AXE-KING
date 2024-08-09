@@ -6,12 +6,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const isDesktop = /Win|Mac|Linux/.test(navigator.platform);
 
     if (isDesktop) {
+        // Скрываем контент и показываем сообщение для компьютеров
         document.getElementById('desktopMessage').style.display = 'flex';
         document.getElementById('content').style.display = 'none';
         // Скрываем кнопки меню и X
         document.getElementById('menuIcon').style.display = 'none';
         document.getElementById('closeIcon').style.display = 'none';
     } else {
+        // Показываем контент и скрываем сообщение для мобильных устройств
         document.getElementById('desktopMessage').style.display = 'none';
         document.getElementById('content').style.display = 'block';
         // Убедимся, что кнопки меню и X видимы
@@ -19,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('closeIcon').style.display = 'block';
     }
 });
-
 function showCustomAlert(message) {
     document.getElementById('alertMessage').textContent = message;
     document.getElementById('customAlert').style.display = 'flex';
